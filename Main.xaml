@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="770,1667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="770,1529" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="76">
       <x:String>System.Activities</x:String>
@@ -100,46 +100,41 @@
       <AssemblyReference>System.Windows.Forms.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="552,1602" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="552,1464" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strExcelPath">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\Users\Iplinsky\Desktop\20220118 UiPah REF Live\Data.xlsx</Literal>
+          <Literal x:TypeArguments="x:String">C:\Users\Iplinsky\Documents\DocumentosTeste\Data.xlsx</Literal>
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="sd:DataTable" Name="DtCapitals" />
-      <Variable x:TypeArguments="x:String" Name="StrUrlGoogle">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">https://www.google.com/</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="https://www.google.com/" Name="StrUrlGoogle" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="510,95" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[Screen.PrimaryScreen.Bounds.Height.ToString + &quot; x &quot; + Screen.PrimaryScreen.Bounds.Width.ToString]" />
     <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DtCapitals]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="510,97" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Capitals" WorkbookPath="C:\Users\Iplinsky\Documents\DocumentosTeste\Data.xlsx" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Google" sap:VirtualizedContainerService.HintSize="510,1240" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="334c3918-28e4-4b70-90ac-0dbf1293597c" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Google" sap:VirtualizedContainerService.HintSize="510,1237" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="334c3918-28e4-4b70-90ac-0dbf1293597c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1013" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1011" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DtCapitals]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,923" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DtCapitals]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,919" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,796" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,793" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="StrActualCapital" />
                     </Sequence.Variables>
@@ -148,30 +143,30 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="358,92" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[StrUrlGoogle]" Version="V3" />
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="358,228" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="334c3918-28e4-4b70-90ac-0dbf1293597c" Text="[CurrentRow.Item(&quot;Country&quot;).ToString + &quot; capital&quot; + &quot;[k(enter)]&quot;]" Version="V3">
+                    <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="358,91" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[StrUrlGoogle]" Version="V3" />
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="358,227" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="334c3918-28e4-4b70-90ac-0dbf1293597c" Text="[CurrentRow.Item(&quot;Country&quot;).ToString + &quot; capital&quot; + &quot;[k(enter)]&quot;]" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://www.google.com/" DesignTimeRectangle="447, 344, 403, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='gLFyf gsfi' aaname='Pesquisar' /&gt;" Guid="d37b9a4a-a9d8-4943-95c0-4a2fbca14662" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZcAAAAmCAYAAAAIh9ZpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACjSURBVHhe7dUxEQAgDAAxdHDUv8xi4scM0ZBz3ywAlOQCQE4uAOTkAkBOLgDk5AJATi4A5OQCQE4uAOTkAkBOLgDk5AJATi4A5OQCQE4uAOTkAkBOLgDk5AJATi4A5OQCQE4uAOTkAkBOLgDk5AJATi4A5OQCQE4uAOTkAkBOLgDk5AJATi4A5OQCQE4uAOTkAkBOLgDk5AJATi4A5OQCQGz2AyJhyJaigDZBAAAAAElFTkSuQmCC" InformativeScreenshot="06e068df1ae6de9597a125e5485c1f54.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Google' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target DesignTimeRectangle="417, 354, 15, 15" ElementType="Icon" FriendlyName="'PATH'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;svg&amp;gt;path' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='path' class='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEnSURBVDhPzZIxa8JQEMf9HGImcaujTpIuQjsIRtpBbIeWuIhdNNihQoU6WNBFu4mdSrd+xzP/k3tckpeowaHDD8J7//vl3ntXKJYcuhRW2bXboF73jrx2i9zw25axEZHV6jVaLz/o73cbYTGf0lW1Gim0YWQQofDn+4v850fuDryOh4f13YbKlUpCoDGy9WrOIkh1ANzeNFn4/hYk9jQsQwcIo6N4QJAOs7pjWa97z0FI4wHhlAzLOl7raBBdnySTY+Io8YDwGb4oMrY9wTyAhHHZOgCkq5dBP7GnMTLMEV4TRZPRkIfWf3rgGcMawBDr4jhGBvBSs2lgigUcX+4VP9I1mohMgBT3CPQoyHikCa2yLLKEZ8tAmjCXDMg96rXcMhv/VebQHhtFOCxz7ctiAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
                         </uix:TargetAnchorable>
                       </uix:NTypeInto.Target>
                     </uix:NTypeInto>
-                    <uix:NGetText DisplayName="Get Text 'Capital'" sap:VirtualizedContainerService.HintSize="358,167" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="334c3918-28e4-4b70-90ac-0dbf1293597c" TextString="[StrActualCapital]" Version="V3">
+                    <uix:NGetText DisplayName="Get Text 'Capital'" sap:VirtualizedContainerService.HintSize="358,166" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="334c3918-28e4-4b70-90ac-0dbf1293597c" TextString="[StrActualCapital]" Version="V3">
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=india+capitql&amp;sxsrf=ALiCzsaywXodqLeY_ss9Mr8OWeVtzmcCkg%3A1668201362612&amp;source=hp&amp;ei=krtuY6b3Iufd5OUP7-amwA8&amp;iflsig=AJiK0e8AAAAAY27JomCxPYcMfIvSid7k6LDGmfi4L9fl&amp;ved=0ahUKEwimiIWthqf7AhXnLrkGHW-zCfgQ4dUDCAg&amp;uact=5&amp;oq=india+capitql&amp;gs_lcp=Cgdnd3Mtd2l6EAMyDAgAEIAEEA0QRhD7ATIHCAAQgAQQDTIHCAAQgAQQDTIGCAAQHhANMgYIABAeEA0yBggAEB4QDTIGCAAQHhANMgYIABAeEA0yBggAEB4QDTIGCAAQHhANOgcIIxDqAhAnOgQIIxAnOgoILhDHARCvARAnOgsIABCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQrwE6CwguENQCELEDEIAEOggIABCxAxCDAToICAAQgAQQsQM6BQguEIAEOg4ILhCABBCxAxCDARDUAjoFCAAQgAQ6CwguEIAEELEDENQCOg4ILhCDARDUAhCxAxCABDoLCC4QsQMQgwEQ1AI6CAguELEDEIMBOgsILhCABBCxAxCDAToICC4QgAQQsQM6CwguEIMBENQCELEDOgsILhCDARCxAxCABDoICC4QsQMQgAQ6DQgAEIAEELEDEEYQ-wE6BAgAEAM6CAguEIAEENQCOggILhDUAhCABDoICAAQgAQQywE6CAguEIAEEMsBUP4EWIoSYPIXaAFwAHgAgAH6AYgB3RKSAQYwLjEwLjOYAQCgAQGwAQo&amp;sclient=gws-wiz" DesignTimeRectangle="188, 448, 157, 36" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Nova Delhi'" FullSelectorArgument="&lt;webctrl parentid='rso' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='rso' tag='A' type='' class='FLP8od' /&gt;" Guid="a050774d-42e7-4da3-94d4-888b77386fc2" InformativeScreenshot="43a7e5cc2790214878f05f4358c006d8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='india capitql - Pesquisa Google' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target DesignTimeRectangle="234, 415, 44, 16" ElementType="Text" FriendlyName="'Capital'" FullSelectorArgument="&lt;webctrl aaname='Capital' parentid='rso' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Capital' parentid='rso' tag='SPAN' type='' class='' check:innerText='Capital' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAUCAYAAADLP76nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFQSURBVFhH7ZRNDoIwEIU9h5GjYeJRSPQasPACbPQMumLhhsTDjLbTYX4sCIgaEhYvoaV9M99M29V6k8CctQD8WwvAvxUF2BYXuNc31jWHbWTdOGVwfnqeD+47heOVvntol0NVX+C44zkDgIY24f3JgZSwF3PTaGIAX/lotTFQVaRqLLvE/xC4KjKxRgalDmiPZr9PkufV3m4Am2SbQuBT1szhkWNj7Jio7KEU/zuOUEieOxJiUVG7AaTxQBljDyAAdXGG3QF1KqYGoErbVuMR0p1kqD4AuKbx7gcgq8QLYmoSbzEeD8CJ0/4BHei6xDYBbTLZEXJ3xcQfBECG1gQrThtlAjx+vcQikL/E9Ay/AZDPtR+LfN4DoDABIdsVMvZyhpgUtR07UAYwWkP7dQHwBXPrsWMqtovrY4X9fQE+FQLII/Q9LQAxzR7gl5o5QAIP+ld4PL5Q4UQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
                         </uix:TargetAnchorable>
                       </uix:NGetText.Target>
                     </uix:NGetText>
-                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="358,98" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[StrActualCapital]" />
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="358,97" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[StrActualCapital]" />
                   </Sequence>
                 </ActivityAction>
               </ui:ForEachRow.Body>
